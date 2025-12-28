@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: userwebsite-ingress
+spec:
+  tls:
+  - hosts:
+    - userwebsitedev.wolfixor.shop
+    secretName: userwebsite-dev-tls
+  rules:
+  - host: userwebsitedev.wolfixor.shop
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: userwebsite-app
+            port:
+              number: 80

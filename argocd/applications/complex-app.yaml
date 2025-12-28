@@ -1,0 +1,59 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: complex-dev
+  namespace: argocd
+spec:
+  project: platform
+  source:
+    repoURL: https://github.com/wolfixor/gitops-platform
+    targetRevision: HEAD
+    path: apps/complex/overlays/dev
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: complex-staging
+  namespace: argocd
+spec:
+  project: platform
+  source:
+    repoURL: https://github.com/wolfixor/gitops-platform
+    targetRevision: HEAD
+    path: apps/complex/overlays/staging
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: staging
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: complex-prod
+  namespace: argocd
+spec:
+  project: platform
+  source:
+    repoURL: https://github.com/wolfixor/gitops-platform
+    targetRevision: HEAD
+    path: apps/complex/overlays/prod
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: production
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true

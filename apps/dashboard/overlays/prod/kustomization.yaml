@@ -1,0 +1,15 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: production
+
+resources:
+  - ../../base
+  - hpa.yaml
+
+images:
+  - name: wolfix1245/dashboard
+    newTag: "5e9486eb26856ddf7911454d4a42c273f7733a8d"  # This will be updated by CI
+
+commonLabels:
+  environment: production
