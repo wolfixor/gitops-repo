@@ -6,7 +6,7 @@ metadata:
 spec:
   project: platform
   source:
-    repoURL: https://github.com/wolfixor/gitops-platform
+    repoURL: https://github.com/wolfixor/gitops-repo
     targetRevision: HEAD
     path: apps/dashboard/overlays/dev
   destination:
@@ -27,7 +27,7 @@ metadata:
 spec:
   project: platform
   source:
-    repoURL: https://github.com/wolfixor/gitops-platform
+    repoURL: https://github.com/wolfixor/gitops-repo
     targetRevision: HEAD
     path: apps/dashboard/overlays/staging
   destination:
@@ -48,7 +48,7 @@ metadata:
 spec:
   project: platform
   source:
-    repoURL: https://github.com/wolfixor/gitops-platform
+    repoURL: https://github.com/wolfixor/gitops-repo
     targetRevision: HEAD
     path: apps/dashboard/overlays/prod
   destination:

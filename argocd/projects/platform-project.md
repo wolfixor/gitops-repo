@@ -34,7 +34,7 @@ This ArgoCD AppProject creates security boundaries and governance for platform a
 ## Configuration Details
 
 ### Source Repositories
-- `https://github.com/wolfixor/gitops-platform`
+- `https://github.com/wolfixor/gitops-repo`
 
 ### Target Environments
 - `dev` namespace

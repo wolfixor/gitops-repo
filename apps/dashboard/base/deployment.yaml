@@ -34,7 +34,7 @@ spec:
       tolerations: []
       containers:
         - name: dashboard-app
-          image: wolfix1245/dashboard:1.1
+          image: wolfix1245/dashboard:prod-latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3000

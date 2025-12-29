@@ -33,7 +33,7 @@ cd D:\site-builder\gitops-repo
 git init
 git add .
 git commit -m "🎉 Initial GitOps repository setup"
-git remote add origin https://github.com/wolfixor/gitops-platform.git
+git remote add origin https://github.com/wolfixor/gitops-repo.git
 git push -u origin main
 ```
 

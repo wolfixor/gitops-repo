@@ -7,7 +7,7 @@ spec:
   description: Platform applications project
   
   sourceRepos:
-  - 'https://github.com/wolfixor/gitops-platform'
+  - 'https://github.com/wolfixor/gitops-repo'
   
   destinations:
   - namespace: dev
