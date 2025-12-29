@@ -5,15 +5,9 @@ metadata:
   labels:
     app: dashboard-app
   annotations:
-    cert-manager.io/cluster-issuer: letsencrypt-prod
-    nginx.ingress.kubernetes.io/ssl-redirect: "true"
-    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
 spec:
   ingressClassName: nginx
-  tls:
-  - hosts:
-    - dashboard.wolfixsite.shop
-    secretName: dashboard-tls
   rules:
     - host: dashboard.wolfixsite.shop
       http:
