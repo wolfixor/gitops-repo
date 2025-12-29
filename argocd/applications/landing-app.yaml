@@ -4,7 +4,7 @@ metadata:
   name: landing-dev
   namespace: argocd
 spec:
-  project: platform
+  project: default
   source:
     repoURL: https://github.com/wolfixor/gitops-repo
     targetRevision: main
@@ -25,7 +25,7 @@ metadata:
   name: landing-staging
   namespace: argocd
 spec:
-  project: platform
+  project: default
   source:
     repoURL: https://github.com/wolfixor/gitops-repo
     targetRevision: main
@@ -46,7 +46,7 @@ metadata:
   name: landing-prod
   namespace: argocd
 spec:
-  project: platform
+  project: default
   source:
     repoURL: https://github.com/wolfixor/gitops-repo
     targetRevision: main
