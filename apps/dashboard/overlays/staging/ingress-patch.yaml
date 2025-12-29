@@ -5,10 +5,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - dashboard-staging.wolfixor.shop
+    - dashboard-staging.wolfixsite.shop
     secretName: dashboard-staging-tls
   rules:
-  - host: dashboard-staging.wolfixor.shop
+  - host: dashboard-staging.wolfixsite.shop
     http:
       paths:
       - path: /

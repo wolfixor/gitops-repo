@@ -12,16 +12,16 @@ spec:
   ingressClassName: nginx
   tls:
   - hosts:
-    - complex.wolfixor.shop
+    - complex.wolfixsite.shop
     secretName: complex-tls
   rules:
-  - host: complex.wolfixor.shop
+  - host: complex.wolfixsite.shop
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: complex
+            name: complex-service
             port:
               number: 80

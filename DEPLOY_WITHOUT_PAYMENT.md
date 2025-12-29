@@ -45,9 +45,9 @@ kubectl get pods -n dev
 ```
 
 ## 🌐 Live URLs:
-- **Dashboard**: https://dashboard.wolfixor.shop
-- **Complex**: https://complex.wolfixor.shop
-- **UserWebsite**: https://userwebsite.wolfixor.shop
-- **Landing**: https://www.wolfixor.shop
+- **Dashboard**: https://dashboard.wolfixsite.shop
+- **Complex**: https://complex.wolfixsite.shop
+- **UserWebsite**: https://userwebsite.wolfixsite.shop
+- **Landing**: https://www.wolfixsite.shop
 
 **Payment app stays dormant until you're ready to deploy it!** 💤

@@ -4,23 +4,16 @@ metadata:
   name: landingcomplex-ingress
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
-    cert-manager.io/cluster-issuer: letsencrypt-prod
-    nginx.ingress.kubernetes.io/ssl-redirect: "true"
-    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
 spec:
   ingressClassName: nginx
-  tls:
-  - hosts:
-    - www.wolfixor.shop
-    secretName: landing-tls
   rules:
-    - host: www.wolfixor.shop
+    - host: mamad.wolfixsite.shop
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: landingcomplex-app
+                name: landingcomplex-service
                 port:
                   number: 80

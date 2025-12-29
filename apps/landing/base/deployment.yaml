@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: landingcomplex-app
-          image: wolfix1245/landing:1.0
+          image: wolfix1245/landing:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3000

@@ -18,7 +18,7 @@ metadata:
 spec:
   acme:
     server: https://acme-v02.api.letsencrypt.org/directory
-    email: your-email@wolfixor.shop
+    email: your-email@wolfixsite.shop
     privateKeySecretRef:
       name: letsencrypt-prod
     solvers:
@@ -35,14 +35,14 @@ kubectl apply -f letsencrypt-clusterissuer.yaml
 ### **SSL-Enabled Domains:**
 
 **Dashboard:**
-- **Production**: https://dashboard.wolfixor.shop
-- **Staging**: https://dashboard-staging.wolfixor.shop  
-- **Development**: https://dashboarddev.wolfixor.shop
+- **Production**: https://dashboard.wolfixsite.shop
+- **Staging**: https://dashboard-staging.wolfixsite.shop  
+- **Development**: https://dashboarddev.wolfixsite.shop
 
 **Landing:**
-- **Production**: https://www.wolfixor.shop
-- **Staging**: https://staging.wolfixor.shop
-- **Development**: https://dev.wolfixor.shop
+- **Production**: https://www.wolfixsite.shop
+- **Staging**: https://staging.wolfixsite.shop
+- **Development**: https://dev.wolfixsite.shop
 
 ### **Features Added:**
 - ✅ **Let's Encrypt certificates** for all domains

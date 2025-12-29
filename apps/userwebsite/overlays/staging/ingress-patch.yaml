@@ -5,10 +5,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - userwebsite-staging.wolfixor.shop
+    - userwebsite-staging.wolfixsite.shop
     secretName: userwebsite-staging-tls
   rules:
-  - host: userwebsite-staging.wolfixor.shop
+  - host: userwebsite-staging.wolfixsite.shop
     http:
       paths:
       - path: /

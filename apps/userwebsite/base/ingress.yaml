@@ -12,16 +12,16 @@ spec:
   ingressClassName: nginx
   tls:
   - hosts:
-    - userwebsite.wolfixor.shop
+    - userwebsite.wolfixsite.shop
     secretName: userwebsite-tls
   rules:
-  - host: userwebsite.wolfixor.shop
+  - host: userwebsite.wolfixsite.shop
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: userwebsite-app
+            name: userwebsite-service
             port:
               number: 80

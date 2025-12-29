@@ -80,7 +80,7 @@ kubectl.exe get pods -n cert-manager
 - ✅ **Tolerations**: Removed (not needed)
 - ✅ **DNS Policy**: `ClusterFirst` (standard, works)
 - ✅ **Scheduler**: `default-scheduler` (standard, works)
-- ✅ **Domains**: Updated to `wolfixor.shop`
+- ✅ **Domains**: Updated to `wolfixsite.shop`
 - ✅ **SSL**: Let's Encrypt configured
 
 **Your GitOps configuration now matches your actual cluster!** 🎉

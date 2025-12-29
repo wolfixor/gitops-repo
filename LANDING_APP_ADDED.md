@@ -8,7 +8,7 @@ apps/landing/
 ├── base/
 │   ├── deployment.yaml      # Production-ready config
 │   ├── service.yaml         # ClusterIP service
-│   ├── ingress.yaml         # www.wolfixor.shop domain
+│   ├── ingress.yaml         # www.wolfixsite.shop domain
 │   └── kustomization.yaml   # Base configuration
 └── overlays/
     ├── dev/                 # Development environment
@@ -21,12 +21,12 @@ apps/landing/
 **Base Configuration (Production):**
 - **Image**: `wolfix1245/landing:1.0`
 - **Resources**: 500m CPU, 1000Mi memory
-- **Domain**: `www.wolfixor.shop`
+- **Domain**: `www.wolfixsite.shop`
 - **Port**: 3000 → 80
 
 **Environment Variations:**
-- **Dev**: Reduced resources, `dev.wolfixor.shop`
-- **Staging**: Medium resources, `staging.wolfixor.shop`  
+- **Dev**: Reduced resources, `dev.wolfixsite.shop`
+- **Staging**: Medium resources, `staging.wolfixsite.shop`  
 - **Production**: Full resources + HPA (1-3 replicas)
 
 ### **🚀 Deployment Commands:**
@@ -48,9 +48,9 @@ kubectl get pods -n production -l app=landingcomplex-app
 ```
 
 **3. Access URLs:**
-- **Production**: https://www.wolfixor.shop
-- **Staging**: https://staging.wolfixor.shop
-- **Development**: https://dev.wolfixor.shop
+- **Production**: https://www.wolfixsite.shop
+- **Staging**: https://staging.wolfixsite.shop
+- **Development**: https://dev.wolfixsite.shop
 
 ### **🔄 CI Integration:**
 Add this to your landing app CI pipeline:

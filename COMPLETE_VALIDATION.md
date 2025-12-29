@@ -91,7 +91,7 @@ spec:
   ingressClassName: nginx
   tls:
   - hosts:
-    - dashboard.wolfixor.shop
+    - dashboard.wolfixsite.shop
     secretName: dashboard-tls
 ```
 
@@ -206,7 +206,7 @@ kubectl get hpa -n production
 kubectl port-forward svc/dashboard-app 8080:80 -n production
 
 # Test external access (after DNS setup)
-curl -k https://dashboard.wolfixor.shop
+curl -k https://dashboard.wolfixsite.shop
 ```
 
 This comprehensive validation ensures every part of your YAML works correctly with your cluster! 🎯

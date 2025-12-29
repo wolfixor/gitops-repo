@@ -5,10 +5,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - complexdev.wolfixor.shop
+    - complexdev.wolfixsite.shop
     secretName: complex-dev-tls
   rules:
-  - host: complexdev.wolfixor.shop
+  - host: complexdev.wolfixsite.shop
     http:
       paths:
       - path: /

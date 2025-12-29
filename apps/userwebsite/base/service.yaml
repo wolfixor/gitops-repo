@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: userwebsite-app
+  name: userwebsite-service
   labels:
     app: userwebsite-app
 spec:
@@ -9,12 +9,6 @@ spec:
   selector:
     app: userwebsite-app
   ports:
-    - name: http
-      port: 80
+    - port: 80
       targetPort: 3000
       protocol: TCP
-  sessionAffinity: None
-  internalTrafficPolicy: Cluster
-  ipFamilies:
-    - IPv4
-  ipFamilyPolicy: SingleStack

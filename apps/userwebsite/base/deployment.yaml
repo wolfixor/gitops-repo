@@ -84,7 +84,7 @@ spec:
                   name: shared-secret
                   key: ZARINPAL_MERCHANT_ID
             - name: NEXT_PUBLIC_BASE_USERWEBSITE_PAYMENT_URL
-              value: "https://www.wolfixor.shop"
+              value: "https://www.wolfixsite.shop"
           resources:
             requests:
               cpu: "500m"

@@ -12,13 +12,13 @@
 
 ### **2. Service & Ingress:**
 - ✅ **Service**: Updated to `userwebsite-app` naming
-- ✅ **Domain**: `userwebsite.wolfixor.shop`
+- ✅ **Domain**: `userwebsite.wolfixsite.shop`
 - ✅ **SSL**: Let's Encrypt enabled with force redirect
 
 ### **3. Environment Overlays:**
 - ✅ **Production**: Uses base + HPA (2-10 replicas, 60% CPU threshold)
-- ✅ **Staging**: Reduced resources, `userwebsite-staging.wolfixor.shop`
-- ✅ **Dev**: Minimal resources, `userwebsitedev.wolfixor.shop`
+- ✅ **Staging**: Reduced resources, `userwebsite-staging.wolfixsite.shop`
+- ✅ **Dev**: Minimal resources, `userwebsitedev.wolfixsite.shop`
 
 ### **4. HPA Configuration:**
 ```yaml
@@ -45,9 +45,9 @@ kubectl create secret generic shared-secret \
 ```
 
 ## 🌐 Access URLs:
-- **Production**: https://userwebsite.wolfixor.shop
-- **Staging**: https://userwebsite-staging.wolfixor.shop
-- **Development**: https://userwebsitedev.wolfixor.shop
+- **Production**: https://userwebsite.wolfixsite.shop
+- **Staging**: https://userwebsite-staging.wolfixsite.shop
+- **Development**: https://userwebsitedev.wolfixsite.shop
 
 ## 📊 GitOps Repository Status:
 

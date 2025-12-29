@@ -5,10 +5,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - dev.wolfixor.shop
+    - dev.wolfixsite.shop
     secretName: landing-dev-tls
   rules:
-  - host: dev.wolfixor.shop
+  - host: dev.wolfixsite.shop
     http:
       paths:
       - path: /
