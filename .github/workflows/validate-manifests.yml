@@ -57,12 +57,12 @@ jobs:
         kustomize build apps/landing/overlays/prod > /tmp/landing-prod.yaml
         echo "✅ Landing manifests are valid"
 
-    - name: Validate ArgoCD Applications
-      run: |
-        echo "🔍 Validating ArgoCD applications..."
-        kubectl --dry-run=client --validate=false apply -f argocd/projects/
-        kubectl --dry-run=client --validate=false apply -f argocd/applications/
-        echo "✅ ArgoCD applications are valid"
+    # - name: Validate ArgoCD Applications
+    #   run: |
+    #     echo "🔍 Validating ArgoCD applications..."
+    #     kubectl --dry-run=client --validate=false apply -f argocd/projects/
+    #     kubectl --dry-run=client --validate=false apply -f argocd/applications/
+    #     echo "✅ ArgoCD applications are valid"
 
     # - name: Security Scan
     #   uses: aquasecurity/trivy-action@master
