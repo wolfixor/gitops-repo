@@ -9,7 +9,7 @@ resources:
 
 images:
   - name: wolfix1245/dashboard
-    newTag: "63e9c618cd926017c45da38ef3786db30dbebaba"  # This will be updated by CI
+    newTag: "d2c498ba9c6937704bbc9f520f84d677bca2c1f0"  # This will be updated by CI
 
 commonLabels:
   environment: production
