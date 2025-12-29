@@ -7,7 +7,7 @@ spec:
   project: platform
   source:
     repoURL: https://github.com/wolfixor/gitops-repo
-    targetRevision: HEAD
+    targetRevision: main
     path: apps/complex/overlays/dev
   destination:
     server: https://kubernetes.default.svc
@@ -28,7 +28,7 @@ spec:
   project: platform
   source:
     repoURL: https://github.com/wolfixor/gitops-repo
-    targetRevision: HEAD
+    targetRevision: main
     path: apps/complex/overlays/staging
   destination:
     server: https://kubernetes.default.svc
@@ -49,7 +49,7 @@ spec:
   project: platform
   source:
     repoURL: https://github.com/wolfixor/gitops-repo
-    targetRevision: HEAD
+    targetRevision: main
     path: apps/complex/overlays/prod
   destination:
     server: https://kubernetes.default.svc
