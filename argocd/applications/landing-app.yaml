@@ -14,6 +14,7 @@ spec:
     namespace: dev
   syncPolicy:
     automated:
+      enabled: true
       prune: true
       selfHeal: true
     syncOptions:
@@ -35,6 +36,7 @@ spec:
     namespace: staging
   syncPolicy:
     automated:
+      enabled: true
       prune: true
       selfHeal: true
     syncOptions:
@@ -56,8 +58,8 @@ spec:
     namespace: production
   syncPolicy:
     automated:
+      enabled: true
       prune: true
       selfHeal: true
     syncOptions:
     - CreateNamespace=true
-  # Note: No automated sync for production - manual approval required
