@@ -84,7 +84,7 @@ spec:
 ```
 
 **ArgoCD Process:**
-1. **Detects change** in `apps/dashboard/overlays/prod/kustomization.yaml`
+1. **Detects change** in `apps/dashboard/overlays/prod/kustomization.yaml`d
 2. **Pulls new tag** from Docker Hub: `wolfix1245/dashboard:a1b2c3d4...`
 3. **Updates Kubernetes** deployment with new image
 4. **Rolls out** new pods with zero downtime

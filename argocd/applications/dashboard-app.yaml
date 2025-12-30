@@ -55,6 +55,9 @@ spec:
     server: https://kubernetes.default.svc
     namespace: production
   syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
     syncOptions:
     - CreateNamespace=true
   # Note: No automated sync for production - manual approval required

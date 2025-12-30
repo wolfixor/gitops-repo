@@ -3,11 +3,18 @@ kind: Ingress
 metadata:
   name: landingcomplex-ingress
   annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   ingressClassName: nginx
+  tls:
+  - hosts:
+    - landing.wolfixsite.shop
+    secretName: landing-tls
   rules:
-    - host: mamad.wolfixsite.shop
+    - host: landing.wolfixsite.shop
       http:
         paths:
           - path: /
