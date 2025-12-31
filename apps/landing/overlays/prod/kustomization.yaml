@@ -9,7 +9,7 @@ resources:
 
 images:
   - name: wolfix1245/landing
-    newTag: "eac51a7f630a12899d2d38f61a2e11975f4532b4"  # This will be updated by CI
+    newTag: "f3e2c5d162e9541d6610ee26608723e949519cf4"  # This will be updated by CI
 
 commonLabels:
   environment: production
