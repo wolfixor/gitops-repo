@@ -1,0 +1,47 @@
+name: Multi-Repo GitOps Update
+
+on:
+  repository_dispatch:
+    types: [update-manifest]
+
+concurrency:
+  group: gitops-updates
+  cancel-in-progress: false
+
+jobs:
+  update-manifests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Update Manifest
+        run: |
+          APP_NAME="${{ github.event.client_payload.app_name }}"
+          IMAGE_TAG="${{ github.event.client_payload.image_tag }}"
+          ENVIRONMENT="${{ github.event.client_payload.environment }}"
+          
+          # Update kustomization.yaml based on environment
+          case "$ENVIRONMENT" in
+            prod)
+              sed -i "s|newTag: \".*\"|newTag: \"$IMAGE_TAG\"|g" \
+                apps/${APP_NAME}/overlays/prod/kustomization.yaml
+              ;;
+            staging)
+              sed -i "s|newTag: \".*\"|newTag: \"$IMAGE_TAG\"|g" \
+                apps/${APP_NAME}/overlays/staging/kustomization.yaml
+              ;;
+            dev)
+              sed -i "s|newTag: \".*\"|newTag: \"$IMAGE_TAG\"|g" \
+                apps/${APP_NAME}/overlays/dev/kustomization.yaml
+              ;;
+          esac
+            
+      - name: Commit Changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "Update ${{ github.event.client_payload.app_name }} to ${{ github.event.client_payload.image_tag }}" || exit 0
+          git push
