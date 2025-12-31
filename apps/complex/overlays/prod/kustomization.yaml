@@ -9,7 +9,7 @@ resources:
 
 images:
   - name: wolfix1245/complex
-    newTag: "b94df91d83ad3a05df2cb93e668199082efad161"  # This will be updated by CI
+    newTag: "23fa8600062db9d997678637c1dfa47d9b2df6ec"  # This will be updated by CI
 
 commonLabels:
   environment: production
