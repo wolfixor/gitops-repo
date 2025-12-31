@@ -12,7 +12,7 @@ patchesStrategicMerge:
 
 images:
   - name: wolfix1245/landing
-    newTag: "dev-latest"
+    newTag: "eac51a7f630a12899d2d38f61a2e11975f4532b4"
 
 commonLabels:
   environment: development
