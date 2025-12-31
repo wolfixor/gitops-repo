@@ -12,7 +12,7 @@ patchesStrategicMerge:
 
 images:
   - name: wolfix1245/dashboard
-    newTag: "dev-latest"
+    newTag: "5022d97c3df6cdfd5f596a436a71fa07a1622eaa"
 
 commonLabels:
   environment: development
