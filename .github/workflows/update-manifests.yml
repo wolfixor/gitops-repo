@@ -3,6 +3,17 @@ name: Multi-Repo GitOps Update
 on:
   repository_dispatch:
     types: [update-manifest]
+  workflow_dispatch:
+    inputs:
+      app_name:
+        description: 'Application name'
+        required: true
+      image_tag:
+        description: 'Image tag'
+        required: true
+      environment:
+        description: 'Environment'
+        required: true
 
 concurrency:
   group: gitops-updates
@@ -14,25 +25,37 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITOPS_TOKEN }}
+          
+      - name: Debug Payload
+        run: |
+          echo "Received trigger for app: ${{ github.event.client_payload.app_name || github.event.inputs.app_name }}"
+          echo "Image tag: ${{ github.event.client_payload.image_tag || github.event.inputs.image_tag }}"
+          echo "Environment: ${{ github.event.client_payload.environment || github.event.inputs.environment }}"
+          echo "Event type: ${{ github.event.action }}"
           
       - name: Update Manifest
         run: |
-          APP_NAME="${{ github.event.client_payload.app_name }}"
-          IMAGE_TAG="${{ github.event.client_payload.image_tag }}"
-          ENVIRONMENT="${{ github.event.client_payload.environment }}"
+          APP_NAME="${{ github.event.client_payload.app_name || github.event.inputs.app_name }}"
+          IMAGE_TAG="${{ github.event.client_payload.image_tag || github.event.inputs.image_tag }}"
+          ENVIRONMENT="${{ github.event.client_payload.environment || github.event.inputs.environment }}"
+          
+          echo "Updating $APP_NAME to $IMAGE_TAG in $ENVIRONMENT"
           
           # Update kustomization.yaml based on environment
           case "$ENVIRONMENT" in
             prod)
+              echo "Updating prod environment"
               sed -i "s|newTag: \".*\"|newTag: \"$IMAGE_TAG\"|g" \
                 apps/${APP_NAME}/overlays/prod/kustomization.yaml
               ;;
             staging)
+              echo "Updating staging environment"
               sed -i "s|newTag: \".*\"|newTag: \"$IMAGE_TAG\"|g" \
                 apps/${APP_NAME}/overlays/staging/kustomization.yaml
               ;;
             dev)
+              echo "Updating dev environment"
               sed -i "s|newTag: \".*\"|newTag: \"$IMAGE_TAG\"|g" \
                 apps/${APP_NAME}/overlays/dev/kustomization.yaml
               ;;
@@ -43,5 +66,5 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add .
-          git commit -m "Update ${{ github.event.client_payload.app_name }} to ${{ github.event.client_payload.image_tag }}" || exit 0
+          git commit -m "Update ${{ github.event.client_payload.app_name || github.event.inputs.app_name }} to ${{ github.event.client_payload.image_tag || github.event.inputs.image_tag }}" || exit 0
           git push
