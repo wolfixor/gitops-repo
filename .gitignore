@@ -1,0 +1,3 @@
+# Infrastructure folder - keep local only
+infrastructure/
+*.md
