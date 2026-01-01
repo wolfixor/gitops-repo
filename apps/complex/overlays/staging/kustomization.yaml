@@ -12,7 +12,7 @@ patchesStrategicMerge:
 
 images:
   - name: wolfix1245/complex
-    newTag: "23fa8600062db9d997678637c1dfa47d9b2df6ec"
+    newTag: "1803198cd7f9c79d9f35262087ca41e746c995a2"
 
 commonLabels:
   environment: staging
