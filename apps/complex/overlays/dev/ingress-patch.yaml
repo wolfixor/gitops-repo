@@ -15,6 +15,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: complex
+            name: complex-service
             port:
               number: 80
