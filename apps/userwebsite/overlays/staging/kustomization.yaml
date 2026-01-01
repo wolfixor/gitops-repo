@@ -12,7 +12,7 @@ patchesStrategicMerge:
 
 images:
   - name: wolfix1245/userwebsite
-    newTag: "1aee8ed76adbb19836567959ad2b531d1186fe0d"
+    newTag: "2ef25c15ab94d63f0a8b6d582712fa44c59024a8"
 
 commonLabels:
   environment: staging
